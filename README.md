@@ -1,10 +1,10 @@
 # clockOS
 **clockOS is still under development** No stable release is available.
 
-clockOS is an app that runs on a Raspberry Pi 2 with an Adafruit PiTFT Plus 480x320 3.5" TFT+Touchscreen and converts it into a smart desktop clock.
-Programming language is C. Base OS for this project hasn't been defined yet.
+clockOS is an app that runs on a Raspberry Pi with a display like Adafruit PiTFT Plus 480x320 3.5" TFT+Touchscreen and converts it into a smart desktop clock.
+Programming language is Node.js.
 
-For contributing take a look at the <a href="http://wiki.clockos.igerli.com/index.php?title=Contributing">Contributing</a> page.
+For contributing take a look at the <a href="https://github.com/iGerli/clockOS/wiki">Contributing</a> page.
 
 For any suggestion add an issue on GitHub.
 
