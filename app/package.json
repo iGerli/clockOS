@@ -1,0 +1,33 @@
+{
+  "name": "clockOS",
+  "version": "0.1.0",
+  "description": "Build your own clock.",
+  "main": "main.js",
+  "scripts": {
+    "start": "NODE_ENV=production startx ./node_modules/electron/dist/electron .",
+    "test": "NODE_ENV=development startx ./node_modules/electron/dist/electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iGerli/clockOS.git"
+  },
+  "keywords": [
+    "resin",
+    "io",
+    "electron",
+    "js"
+  ],
+  "dependencies": {
+    "electron": "^1.4.13",
+    "require-rebuild": "^1.2.8"
+  },
+  "author": "Stefano Gerli",
+  "bugs": {
+    "url": "https://github.com/iGerli/clockOS/issues"
+  },
+  "homepage": "https://github.com/iGerli/clockOS/wiki",
+  "jshintConfig": {
+    "esversion": 6,
+    "strict": true
+  }
+}
