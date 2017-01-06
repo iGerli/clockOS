@@ -23,6 +23,8 @@
 
     let window = null;
 
+    // Allow also webviews, along window, to load from fs
+    app.commandLine.appendSwitch("--allow-file-access-from-files");
 
     // enable touch events if your device supports them
     if (electronConfig.URL_LAUNCHER_TOUCH) {
