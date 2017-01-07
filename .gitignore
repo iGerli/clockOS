@@ -106,3 +106,10 @@ Temporary Items
 
 # Linux trash folder which might appear on any partition or disk
 .Trash-*
+
+# Others
+logs/*
+!.gitkeep
+bower_components/
+tmp
+.idea
