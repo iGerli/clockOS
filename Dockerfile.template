@@ -46,11 +46,12 @@ COPY "$SOURCEFOLDER/app/package.json" ./
 
 # Install npm modules for the application
 RUN JOBS=MAX npm install --unsafe-perm --production \
-	&& npm cache clean \
-  && bower install
+	&& npm cache clean
 
 # Move app to filesystem
 COPY "$SOURCEFOLDER/app" ./
+
+RUN JOBS=MAX bower install
 
 ## uncomment if you want systemd
 ENV INITSYSTEM on
