@@ -27,7 +27,7 @@
     "url": "https://github.com/iGerli/clockOS/issues"
   },
   "homepage": "https://github.com/iGerli/clockOS/wiki",
-  "license": "CC BY-NC-SA 4.0",
+  "license": 	"CC-BY-NC-SA-4.0",
   "jshintConfig": {
     "esversion": 6,
     "strict": true
