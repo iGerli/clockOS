@@ -21,16 +21,5 @@
     "bower_components",
     "test",
     "tests"
-  ],
-  "dependencies": {
-    "angular": "~1.6.1",
-    "angular-route": "~1.5.0",
-    "angular-loader": "~1.5.0",
-    "angular-mocks": "~1.5.0",
-    "html5-boilerplate": "^5.3.0",
-    "angular-material": "^1.1.1"
-  },
-  "resolutions": {
-    "angular": "~1.6.1"
-  }
+  ]
 }
