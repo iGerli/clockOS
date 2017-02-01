@@ -1,0 +1,25 @@
+{
+  "name": "clockos-ui",
+  "description": "Build your own clock.",
+  "main": "main.js",
+  "authors": [
+    "Stefano Gerli"
+  ],
+  "license": "CC-BY-NC-SA-4.0",
+  "keywords": [
+    "resin",
+    "io",
+    "electron",
+    "js"
+  ],
+  "homepage": "https://github.com/iGerli/clockOS/wiki",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
