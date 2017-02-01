@@ -1,12 +1,13 @@
 #!/bin/env node
 {
+    var piPins =  require("pi-pins");
+
     require('require-rebuild')();
     const electron = require('electron');
     const app = electron.app;
     const BrowserWindow = electron.BrowserWindow;
 
     // var gpio = require('rpi-gpio');
-    var piPins =  require("pi-pins");
     var button = piPins.connect(16);
     button.mode('in')
     button.on('rise', function () {
