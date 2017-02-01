@@ -43,8 +43,9 @@ RUN printf "%s\n" "${PWD##}" > SOURCEFOLDER
 # Move to app dir
 WORKDIR /usr/src/app
 
-# Move package.json to filesystem
+# Move package.json and deps.sh to filesystem
 COPY "$SOURCEFOLDER/app/package.json" ./
+COPY "$SOURCEFOLDER/app/deps.sh" ./
 
 # Install Deps
 
