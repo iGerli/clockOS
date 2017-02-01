@@ -59,5 +59,8 @@ COPY "$SOURCEFOLDER/app" ./
 ## uncomment if you want systemd
 ENV INITSYSTEM on
 
+# Change timezone 
+RUN echo America/Costa_Rica | sudo tee /etc/timezone && sudo dpkg-reconfigure --frontend noninteractive tzdata 
+
 # Start app
 CMD ["bash", "/usr/src/app/start.sh"]
