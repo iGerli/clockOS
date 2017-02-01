@@ -4,6 +4,7 @@
   "description": "Build your own clock.",
   "main": "main.js",
   "scripts": {
+    "preinstall": "bash deps.sh",
     "start": "NODE_ENV=production startx ./node_modules/electron/dist/electron .",
     "test": "NODE_ENV=development startx ./node_modules/electron/dist/electron ."
   },

@@ -47,8 +47,7 @@ WORKDIR /usr/src/app
 COPY "$SOURCEFOLDER/app/package.json" ./
 
 # Install Deps
-RUN JOBS=MAX set -o errexit \
-            && set -o pipefail
+
 
 # Install npm modules for the application
 RUN JOBS=MAX npm install --unsafe-perm --production \
