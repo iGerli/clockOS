@@ -46,21 +46,22 @@ WORKDIR /usr/src/app
 # Move package.json to filesystem
 COPY "$SOURCEFOLDER/app/package.json" ./
 
+# Install Deps
+RUN JOBS=MAX set -o errexit \
+            && set -o pipefail
+
 # Install npm modules for the application
 RUN JOBS=MAX npm install --unsafe-perm --production \
 	&& npm cache clean
-#  && npm install -g bower
 
 # Move app to filesystem
 COPY "$SOURCEFOLDER/app" ./
 
-# RUN JOBS=MAX bower install
-
 ## uncomment if you want systemd
 ENV INITSYSTEM on
 
-# Change timezone 
-RUN echo America/Costa_Rica | sudo tee /etc/timezone && sudo dpkg-reconfigure --frontend noninteractive tzdata 
+# Change timezone
+RUN echo America/Costa_Rica | sudo tee /etc/timezone && sudo dpkg-reconfigure --frontend noninteractive tzdata
 
 # Start app
 CMD ["bash", "/usr/src/app/start.sh"]
