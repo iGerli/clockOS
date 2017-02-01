@@ -5,7 +5,13 @@
     const app = electron.app;
     const BrowserWindow = electron.BrowserWindow;
 
-    var gpio = require('rpi-gpio');
+    // var gpio = require('rpi-gpio');
+    const pi-pins =  require("pi-pins");
+    var button = pi-pins.connect(16);
+    button.mode('in')
+    button.on('rise', function () {
+        console.log("Button Pressed");
+    });
 
     // GPIO Detection
     /* Button Pins
@@ -13,16 +19,16 @@
     // Up = 16
     // Down = 17
     // Back = 27
-    // Select = 22 
+    // Select = 22
     /////////////*/
 
-    gpio.on('change', function(channel, value) {
+    /*gpio.on('change', function(channel, value) {
         console.log('Channel ' + channel + ' value is now ' + value);
     });
     gpio.setup(16, gpio.DIR_IN, gpio.EDGE_BOTH);
     gpio.setup(17, gpio.DIR_IN, gpio.EDGE_BOTH);
     gpio.setup(27, gpio.DIR_IN, gpio.EDGE_BOTH);
-    gpio.setup(22, gpio.DIR_IN, gpio.EDGE_BOTH);
+    gpio.setup(22, gpio.DIR_IN, gpio.EDGE_BOTH);*/
 
     // simple parameters initialization
     let electronConfig = {
@@ -88,6 +94,6 @@
         // the big red button, here we go
         window.loadURL(electronConfig.URL_LAUNCHER_URL);
 
-        
+
     });
 }

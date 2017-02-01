@@ -20,7 +20,7 @@
   "dependencies": {
     "electron": "^1.4.13",
     "require-rebuild": "^1.2.8",
-    "rpi-gpio": "^0.7.0"
+    "pi-pins": "~1.0.2"
   },
   "author": "Stefano Gerli",
   "bugs": {
