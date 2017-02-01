@@ -1,5 +1,5 @@
 
-var piPins =  require("pi-pins");
+//var piPins =  require("pi-pins");
 
 require('require-rebuild')();
 const electron = require('electron');
