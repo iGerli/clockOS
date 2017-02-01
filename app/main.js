@@ -6,8 +6,8 @@
     const BrowserWindow = electron.BrowserWindow;
 
     // var gpio = require('rpi-gpio');
-    var pi-pins =  require("pi-pins");
-    var button = pi-pins.connect(16);
+    var piPins =  require("pi-pins");
+    var button = piPins.connect(16);
     button.mode('in')
     button.on('rise', function () {
         console.log("Button Pressed");
