@@ -1,30 +1,7 @@
-
-//var piPins =  require("pi-pins");
-
 require('require-rebuild')();
 const electron = require('electron');
 
 const { app, BrowserWindow } = electron;
-
-// var gpio = require('rpi-gpio');
-
-
-// GPIO Detection
-/* Button Pins
-//////////////
-// Up = 16
-// Down = 17
-// Back = 27
-// Select = 22
-/////////////*/
-
-/*gpio.on('change', function(channel, value) {
-    console.log('Channel ' + channel + ' value is now ' + value);
-});
-gpio.setup(16, gpio.DIR_IN, gpio.EDGE_BOTH);
-gpio.setup(17, gpio.DIR_IN, gpio.EDGE_BOTH);
-gpio.setup(27, gpio.DIR_IN, gpio.EDGE_BOTH);
-gpio.setup(22, gpio.DIR_IN, gpio.EDGE_BOTH);*/
 
 // simple parameters initialization
 const electronConfig = {
@@ -69,12 +46,6 @@ app.on('ready', () => {
     },
   });
 
-  var button = piPins.connect(16);
-  button.mode('in')
-  button.on('rise', function () {
-      console.log("Button Pressed");
-  });
-
   window.webContents.on('did-finish-load', () => {
     setTimeout(() => {
       window.show();
@@ -89,4 +60,23 @@ app.on('ready', () => {
 
   // the big red button, here we go
   window.loadURL(electronConfig.URL_LAUNCHER_URL);
+});
+
+
+// GPIO Detection
+/* Button Pins
+//////////////
+// Up = 16
+// Down = 17
+// Back = 27
+// Select = 22
+/////////////*/
+
+// PiPins
+var piPins =  require("pi-pins");
+
+var button = piPins.connect(16);
+button.mode('in')
+button.on('rise', function () {
+    console.log("Button Pressed");
 });
