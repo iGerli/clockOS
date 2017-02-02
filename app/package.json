@@ -19,7 +19,7 @@
     "js"
   ],
   "dependencies": {
-    "electron": "^1.4.13",
+    "electron": "1.2.5",
     "require-rebuild": "^1.2.8",
     "pi-pins": "~1.0.2"
   },
