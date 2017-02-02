@@ -4,9 +4,9 @@
   "description": "Build your own clock.",
   "main": "main.js",
   "scripts": {
-    "preinstall": "bash deps.sh",
-    "start": "NODE_ENV=production startx ./node_modules/electron/dist/electron .",
-    "test": "NODE_ENV=development startx ./node_modules/electron/dist/electron ."
+    "dev": "NODE_ENV=development electron .",
+    "lint": "eslint .",
+    "start": "NODE_ENV=production startx ./node_modules/electron/dist/electron ."
   },
   "repository": {
     "type": "git",
@@ -32,5 +32,10 @@
   "jshintConfig": {
     "esversion": 6,
     "strict": true
+  },
+  "devDependencies": {
+    "eslint": "^3.14.1",
+    "eslint-config-airbnb-base": "^11.0.1",
+    "eslint-plugin-import": "^2.2.0"
   }
 }
