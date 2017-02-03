@@ -647,6 +647,11 @@ md-toolbar {
 .align-center {
   text-align: center; }
 
+md-toolbar.center-text md-toolbar-row {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+
 .flex-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -779,5 +784,26 @@ input {
   font-weight: 400;
   letter-spacing: 0.010em;
   line-height: 24px; }
+
+.white-app-background {
+  background: #fff;
+  min-height: 100%;
+  min-width: 100%; }
+
+app-status-bar {
+  min-height: 30px; }
+  app-status-bar md-toolbar-row {
+    height: auto !important; }
+  app-status-bar md-toolbar {
+    min-height: 30px; }
+
+::-webkit-scrollbar {
+  width: 4px; }
+
+::-webkit-scrollbar-track {
+  background-color: #efefef; }
+
+::-webkit-scrollbar-thumb {
+  background-color: #afafaf; }
 
 /*# sourceMappingURL=styles.bundle.map*/
