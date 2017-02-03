@@ -20,8 +20,8 @@
     "js"
   ],
   "dependencies": {
-    "electron": "^1.2.5",
-    "require-rebuild": "^1.2.8",
+    "electron": "^1.4.15",
+    "electron-rebuild": "^1.5.7",
     "pi-pins": "~1.0.2"
   },
   "author": "Stefano Gerli",
