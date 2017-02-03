@@ -85,57 +85,59 @@ app.on('ready', () => {
 /////////////*/
 
 // PiPins
-var piPins =  require("pi-pins");
-var robot = require("robotjs");
+const piPins = require('pi-pins');
+const robot = require('robotjs');
 
 const navButtonPins = {
-  upButton = 16,
-  downButton = 17,
-  backButton = 27,
-  selectButton = 22,
+  upButton: 16,
+  downButton: 17,
+  backButton: 27,
+  selectButton: 22,
 };
 
-var navButtons = {
-  upButton = piPins.connect(navButtonPins.upButton),
-  downButton = piPins.connect(navButtonPins.downButton),
-  backButton = piPins.connect(navButtonPins.backButton),
-  selectButton = piPins.connect(navButtonPins.selectButton)
+const navButtons = {
+  upButton: piPins.connect(navButtonPins.upButton),
+  downButton: piPins.connect(navButtonPins.downButton),
+  backButton: piPins.connect(navButtonPins.backButton),
+  selectButton: piPins.connect(navButtonPins.selectButton),
 };
 
-for (var key in navButtons) {
+for (const key in navButtons) {
   // Loopthrough navButtons
   if (navButtons.hasOwnProperty(key)) {
     navButtons[key].mode('in');
 
 
-
     switch (key) {
-      case upButton:
+      case 'upButton':
         // Tab
-        navButtons[key].on('rise', function () {
-          robot.keyTap("tab");
-        }
+        navButtons[key].on('rise', () => {
+          robot.keyTap('tab', 'shift');
+          console.log('upButton Pressed');
+        });
         break;
-      case downButton:
+      case 'downButton':
       // Shift+tab
-        navButtons[key].on('rise', function () {
-          robot.keyTap("tab", "shift");
-        }
+        navButtons[key].on('rise', () => {
+          robot.keyTap('tab');
+          console.log('downButton Pressed');
+        });
         break;
-      case backButton:
+      case 'backButton':
         // History back
-        navButtons[key].on('rise', function () {
-          console.log("Back");
-        }
+        navButtons[key].on('rise', () => {
+          console.log('Back');
+        });
         break;
-      case selectButton:
+      case 'selectButton':
         // Enter
-        navButtons[key].on('rise', function () {
-          robot.keyTap("enter");
-        }
+        navButtons[key].on('rise', () => {
+          robot.keyTap('enter');
+          console.log('selectButton Pressed');
+        });
         break;
       default:
-
+        console.log('Button Pressed');
     }
   }
 }
