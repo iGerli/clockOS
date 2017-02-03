@@ -5,6 +5,7 @@
   "main": "main.js",
   "scripts": {
     "preinstall": "bash deps.sh",
+    "rebuild": "npm rebuild --runtime=electron --target=1.4.15 --disturl=https://atom.io/download/atom-shell --abi=48",
     "dev": "NODE_ENV=development electron .",
     "lint": "eslint .",
     "start": "NODE_ENV=production startx ./node_modules/electron/dist/electron ."
@@ -22,7 +23,8 @@
   "dependencies": {
     "electron": "^1.4.15",
     "electron-rebuild": "^1.5.7",
-    "pi-pins": "~1.0.2"
+    "pi-pins": "~1.0.2",
+    "robotjs": "~0.4.5"
   },
   "author": "Stefano Gerli",
   "bugs": {

@@ -28,7 +28,9 @@ RUN apt-get update && apt-get install -y \
   libsmbclient \
   libssh-4 \
   fbset \
-  libexpat-dev && rm -rf /var/lib/apt/lists/*
+  libexpat-dev && rm -rf /var/lib/apt/lists/* \
+  libxtst-dev \
+  libpng-dev
 
 # Set Xorg and FLUXBOX preferences
 RUN mkdir ~/.fluxbox
