@@ -5,8 +5,45 @@ webpackJsonp([0,3],{
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return rightInAnimation; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return fadeInZoom; });
+
+// Component transition animations
+var rightInAnimation = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["j" /* trigger */])('routeAnimation', [
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["k" /* state */])('*', __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["l" /* style */])({
+        transform: 'translateX(0)'
+    })),
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* transition */])(':enter', [
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["l" /* style */])({
+            transform: 'translateX(100%)'
+        }),
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* animate */])('0.08s ease-in')
+    ]),
+]);
+var fadeInZoom = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["j" /* trigger */])('routeAnimation', [
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["k" /* state */])('*', __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["l" /* style */])({
+        opacity: 1,
+        transform: 'scale(1)'
+    })),
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* transition */])(':enter', [
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["l" /* style */])({
+            opacity: 0,
+            transform: 'scale(0.95)'
+        }),
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* animate */])('0.1s 2s ease-in')
+    ])
+]);
+//# sourceMappingURL=/home/sgerli/Development/iGerli Clock/clockOS-ui/src/animations.js.map
+
+/***/ }),
+
+/***/ 426:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(419);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__animations__ = __webpack_require__(637);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__animations__ = __webpack_require__(425);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomeComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -57,9 +94,9 @@ var HomeComponent = (function () {
     HomeComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["i" /* Component */])({
             selector: 'app-home',
-            template: __webpack_require__(804),
-            styles: [__webpack_require__(799)],
-            animations: [__WEBPACK_IMPORTED_MODULE_2__animations__["a" /* fadeInZoom */]]
+            template: __webpack_require__(805),
+            styles: [__webpack_require__(800)],
+            animations: [__WEBPACK_IMPORTED_MODULE_2__animations__["b" /* fadeInZoom */]]
         }), 
         __metadata('design:paramtypes', [(typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Renderer */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Renderer */]) === 'function' && _b) || Object, (typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === 'function' && _c) || Object])
     ], HomeComponent);
@@ -70,11 +107,12 @@ var HomeComponent = (function () {
 
 /***/ }),
 
-/***/ 426:
+/***/ 427:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__animations__ = __webpack_require__(425);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MenuComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -86,16 +124,33 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
 var MenuComponent = (function () {
     function MenuComponent() {
+        this.routeAnimation = true;
+        this.display = 'block';
+        this.position = 'relative';
     }
     MenuComponent.prototype.ngOnInit = function () {
     };
+    __decorate([
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* HostBinding */])('@routeAnimation'), 
+        __metadata('design:type', Object)
+    ], MenuComponent.prototype, "routeAnimation", void 0);
+    __decorate([
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* HostBinding */])('style.display'), 
+        __metadata('design:type', Object)
+    ], MenuComponent.prototype, "display", void 0);
+    __decorate([
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* HostBinding */])('style.position'), 
+        __metadata('design:type', Object)
+    ], MenuComponent.prototype, "position", void 0);
     MenuComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["i" /* Component */])({
             selector: 'app-menu',
-            template: __webpack_require__(805),
-            styles: [__webpack_require__(800)]
+            template: __webpack_require__(806),
+            styles: [__webpack_require__(801)],
+            animations: [__WEBPACK_IMPORTED_MODULE_1__animations__["a" /* rightInAnimation */]]
         }), 
         __metadata('design:paramtypes', [])
     ], MenuComponent);
@@ -105,7 +160,7 @@ var MenuComponent = (function () {
 
 /***/ }),
 
-/***/ 478:
+/***/ 479:
 /***/ (function(module, exports) {
 
 function webpackEmptyContext(req) {
@@ -114,18 +169,18 @@ function webpackEmptyContext(req) {
 webpackEmptyContext.keys = function() { return []; };
 webpackEmptyContext.resolve = webpackEmptyContext;
 module.exports = webpackEmptyContext;
-webpackEmptyContext.id = 478;
+webpackEmptyContext.id = 479;
 
 
 /***/ }),
 
-/***/ 479:
+/***/ 480:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__polyfills_ts__ = __webpack_require__(644);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__ = __webpack_require__(607);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__ = __webpack_require__(608);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__(643);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_app_module__ = __webpack_require__(640);
@@ -142,59 +197,14 @@ __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dyna
 
 /***/ }),
 
-/***/ 637:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* unused harmony export slideInDownAnimation */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return fadeInZoom; });
-
-// Component transition animations
-var slideInDownAnimation = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["j" /* trigger */])('routeAnimation', [
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["k" /* state */])('*', __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["l" /* style */])({
-        opacity: 1,
-        transform: 'translateX(0)'
-    })),
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* transition */])(':enter', [
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["l" /* style */])({
-            opacity: 0,
-            transform: 'translateX(-100%)'
-        }),
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* animate */])('0.2s ease-in')
-    ]),
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* transition */])(':leave', [
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* animate */])('0.5s ease-out', __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["l" /* style */])({
-            opacity: 0,
-            transform: 'translateY(100%)'
-        }))
-    ])
-]);
-var fadeInZoom = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["j" /* trigger */])('routeAnimation', [
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["k" /* state */])('*', __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["l" /* style */])({
-        opacity: 1,
-        transform: 'scale(1)'
-    })),
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* transition */])(':enter', [
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["l" /* style */])({
-            opacity: 0,
-            transform: 'scale(0.95)'
-        }),
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* animate */])('0.1s 2s ease-in')
-    ])
-]);
-//# sourceMappingURL=/home/sgerli/Development/iGerli Clock/clockOS-ui/src/animations.js.map
-
-/***/ }),
-
 /***/ 638:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(419);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_home_component__ = __webpack_require__(425);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__menu_menu_component__ = __webpack_require__(426);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_home_component__ = __webpack_require__(426);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__menu_menu_component__ = __webpack_require__(427);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppRoutingModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -264,8 +274,8 @@ var AppComponent = (function () {
     AppComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["i" /* Component */])({
             selector: 'app-root',
-            template: __webpack_require__(802),
-            styles: [__webpack_require__(797)]
+            template: __webpack_require__(803),
+            styles: [__webpack_require__(798)]
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);
@@ -283,12 +293,12 @@ var AppComponent = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(43);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(225);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_material__ = __webpack_require__(588);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_material__ = __webpack_require__(589);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__(639);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_routing_module__ = __webpack_require__(638);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__clock_clock_component__ = __webpack_require__(641);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__home_home_component__ = __webpack_require__(425);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__menu_menu_component__ = __webpack_require__(426);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__home_home_component__ = __webpack_require__(426);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__menu_menu_component__ = __webpack_require__(427);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__status_bar_status_bar_component__ = __webpack_require__(642);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -385,8 +395,8 @@ var ClockComponent = (function () {
     ClockComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["i" /* Component */])({
             selector: 'clock-widget',
-            template: __webpack_require__(803),
-            styles: [__webpack_require__(798)]
+            template: __webpack_require__(804),
+            styles: [__webpack_require__(799)]
         }), 
         __metadata('design:paramtypes', [])
     ], ClockComponent);
@@ -420,8 +430,8 @@ var StatusBarComponent = (function () {
     StatusBarComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["i" /* Component */])({
             selector: 'app-status-bar',
-            template: __webpack_require__(806),
-            styles: [__webpack_require__(801)]
+            template: __webpack_require__(807),
+            styles: [__webpack_require__(802)]
         }), 
         __metadata('design:paramtypes', [])
     ], StatusBarComponent);
@@ -481,7 +491,7 @@ var environment = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_core_js_es6_reflect___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_13_core_js_es6_reflect__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_core_js_es7_reflect__ = __webpack_require__(659);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_core_js_es7_reflect___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_14_core_js_es7_reflect__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_zone_js_dist_zone__ = __webpack_require__(848);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_zone_js_dist_zone__ = __webpack_require__(852);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_zone_js_dist_zone___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_15_zone_js_dist_zone__);
 
 
@@ -503,83 +513,83 @@ var environment = {
 
 /***/ }),
 
-/***/ 797:
-/***/ (function(module, exports) {
-
-module.exports = ""
-
-/***/ }),
-
 /***/ 798:
 /***/ (function(module, exports) {
 
-module.exports = ".hour.md-display-3 {\n  font-size: 80px;\n  line-height: 68px;\n  margin: 0;\n  font-weight: 100; }\n\n.date.md-display-0 {\n  margin: 0;\n  margin-bottom: 20px; }\n\n/* AM/PM Indicator */\n.indicator.md-display-0 {\n  margin-right: 20px; }\n\n.md-display-0 {\n  font-weight: 300;\n  font-size: 24px;\n  line-height: 26px;\n  margin: 5px 0; }\n  .md-display-0.status-clock {\n    font-size: 16px;\n    font-weight: 400;\n    line-height: 20px; }\n"
+module.exports = ""
 
 /***/ }),
 
 /***/ 799:
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = ".hour.md-display-3 {\n  font-size: 80px;\n  line-height: 68px;\n  margin: 0;\n  font-weight: 100; }\n\n.date.md-display-0 {\n  margin: 0;\n  margin-bottom: 20px; }\n\n/* AM/PM Indicator */\n.indicator.md-display-0 {\n  margin-right: 20px; }\n\n.md-display-0 {\n  font-weight: 300;\n  font-size: 24px;\n  line-height: 26px;\n  margin: 5px 0; }\n  .md-display-0.status-clock {\n    font-size: 16px;\n    font-weight: 400;\n    line-height: 20px; }\n"
 
 /***/ }),
 
 /***/ 800:
 /***/ (function(module, exports) {
 
-module.exports = "md-list a {\n  text-decoration: none; }\n  md-list a:focus {\n    outline: none; }\n    md-list a:focus md-list-item {\n      background: #009688;\n      color: #fff; }\n"
+module.exports = ""
 
 /***/ }),
 
 /***/ 801:
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = "md-list a {\n  text-decoration: none; }\n  md-list a h4, md-list a [md-list-avatar] {\n    color: rgba(0, 0, 0, 0.54); }\n  md-list a:focus {\n    outline: none; }\n    md-list a:focus md-list-item {\n      background: #009688; }\n      md-list a:focus md-list-item h4, md-list a:focus md-list-item [md-list-avatar] {\n        color: #fff; }\n\nmd-list md-list-item [md-list-avatar] {\n  height: auto; }\n"
 
 /***/ }),
 
 /***/ 802:
 /***/ (function(module, exports) {
 
-module.exports = "<router-outlet></router-outlet>"
+module.exports = ""
 
 /***/ }),
 
 /***/ 803:
 /***/ (function(module, exports) {
 
-module.exports = "<h1 [class]=\"extraClass + ' md-display-' + size\" [innerText]=\"clock | date: format\">clock</h1>\n"
+module.exports = "<router-outlet></router-outlet>"
 
 /***/ }),
 
 /***/ 804:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"flex-container\">\n  <div class=\"full-width\">\n    <clock-widget [extraClass]=\"'align-left date'\" [size]=\"0\" [format]=\"'EEEE, MMMM d'\"></clock-widget>\n    <clock-widget [extraClass]=\"'hour align-center'\" [size]=\"3\" [format]=\"'h:mm'\"></clock-widget>\n    <clock-widget [extraClass]=\"'align-right indicator'\" [size]=\"0\" [format]=\"'a'\"></clock-widget>\n  </div>\n</div>\n<button #mainButton class=\"hidden-button\" (blur)=\"buttonBlur()\" (click)=\"onEnter()\"></button>"
+module.exports = "<h1 [class]=\"extraClass + ' md-display-' + size\" [innerText]=\"clock | date: format\">clock</h1>\n"
 
 /***/ }),
 
 /***/ 805:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"white-app-background\">\n  <app-status-bar></app-status-bar>\n  <md-list>\n    <a href=\"#\"><md-list-item>Pepper</md-list-item></a>\n    <a href=\"#\"><md-list-item> Salt </md-list-item></a>\n    <a href=\"#\"><md-list-item> Paprika </md-list-item></a>\n  </md-list>\n</div>\n"
+module.exports = "<div class=\"flex-container\">\n  <div class=\"full-width\">\n    <clock-widget [extraClass]=\"'align-left date'\" [size]=\"0\" [format]=\"'EEEE, MMMM d'\"></clock-widget>\n    <clock-widget [extraClass]=\"'hour align-center'\" [size]=\"3\" [format]=\"'h:mm'\"></clock-widget>\n    <clock-widget [extraClass]=\"'align-right indicator'\" [size]=\"0\" [format]=\"'a'\"></clock-widget>\n  </div>\n</div>\n<button #mainButton class=\"hidden-button\" (blur)=\"buttonBlur()\" (click)=\"onEnter()\"></button>"
 
 /***/ }),
 
 /***/ 806:
 /***/ (function(module, exports) {
 
+module.exports = "<div class=\"white-app-background\">\n  <app-status-bar></app-status-bar>   \n  <md-list>\n    <a href=\"#\"><md-list-item><md-icon md-list-avatar>settings</md-icon><h4 md-line>Settings</h4><!--p md-line> Test </p --></md-list-item></a>\n    <a href=\"#\"><md-list-item><md-icon md-list-avatar>wb_sunny</md-icon><h4 md-line>Weather</h4></md-list-item></a>\n    <a href=\"#\"><md-list-item><md-icon md-list-avatar>alarm</md-icon><h4 md-line>Alarms</h4></md-list-item></a>\n  </md-list>\n</div>\n"
+
+/***/ }),
+
+/***/ 807:
+/***/ (function(module, exports) {
+
 module.exports = "<md-toolbar class=\"center-text\" color=\"primary\">\n  <span><clock-widget [extraClass]=\"'status-clock'\" [size]=\"0\" [format]=\"'h:mm a'\"></clock-widget></span>\n</md-toolbar>"
 
 /***/ }),
 
-/***/ 849:
+/***/ 853:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(479);
+module.exports = __webpack_require__(480);
 
 
 /***/ })
 
-},[849]);
+},[853]);
 //# sourceMappingURL=main.bundle.map
