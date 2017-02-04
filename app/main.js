@@ -64,6 +64,11 @@ app.on('ready', () => {
     setTimeout(() => {
       window.show();
     }, 300);
+
+    // Forget Splashscreen
+    setTimeout(() => {
+      window.clearHistory();
+    }, 1000);
   });
 
   // if the env-var is set to true,
