@@ -53,6 +53,7 @@ app.on('ready', () => {
     frame: !!(electronConfig.URL_LAUNCHER_FRAME),
     title: electronConfig.URL_LAUNCHER_TITLE,
     kiosk: !!(electronConfig.URL_LAUNCHER_KIOSK),
+    backgroundColor: '#000000',
     webPreferences: {
       nodeIntegration: !!(electronConfig.URL_LAUNCHER_NODE),
       zoomFactor: electronConfig.URL_LAUNCHER_ZOOM,
