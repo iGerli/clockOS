@@ -64,6 +64,11 @@ app.on('ready', () => {
     setTimeout(() => {
       window.show();
     }, 300);
+
+    // Forget Splashscreen
+    setTimeout(() => {
+      window.webContents.clearHistory();
+    }, 1000);
   });
 
   // if the env-var is set to true,
@@ -107,14 +112,12 @@ for (const key in navButtons) {
         // Tab
         navButtons[key].on('rise', () => {
           robot.keyTap('tab', 'shift');
-          console.log('upButton Pressed');
         });
         break;
       case 'downButton':
       // Shift+tab
         navButtons[key].on('rise', () => {
           robot.keyTap('tab');
-          console.log('downButton Pressed');
         });
         break;
       case 'backButton':
@@ -123,19 +126,15 @@ for (const key in navButtons) {
           if (window.webContents.canGoBack()) {
             window.webContents.goBack();
           }
-
-          console.log('Back');
         });
         break;
       case 'selectButton':
         // Enter
         navButtons[key].on('rise', () => {
           robot.keyTap('enter');
-          console.log('selectButton Pressed');
         });
         break;
       default:
-        console.log('Button Pressed');
     }
   }
 }
