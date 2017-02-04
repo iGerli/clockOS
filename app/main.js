@@ -67,7 +67,7 @@ app.on('ready', () => {
 
     // Forget Splashscreen
     setTimeout(() => {
-      window.clearHistory();
+      window.webContents.clearHistory();
     }, 1000);
   });
 
