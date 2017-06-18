@@ -73,8 +73,8 @@ app.on('ready', () => {
     // Forget Splashscreen
     /*setTimeout(() => {
       window.webContents.clearHistory();
-    }, 1000);*/
-  });
+    }, 1000);
+  });*/
 
   // if the env-var is set to true,
   // a portion of the screen will be dedicated to the chrome-dev-tools
@@ -90,7 +90,6 @@ app.on('ready', () => {
 
 // PiPins
 const piPins = require('pi-pins');
-const robot = require('robotjs');
 
 const navButtonPins = {
   upButton: 16,
@@ -114,29 +113,39 @@ for (const key in navButtons) {
 
     switch (key) {
       case 'upButton':
-        // Tab
+        // Up
         navButtons[key].on('rise', () => {
-          robot.keyTap('tab', 'shift');
+          window.webContents.sendInputEvent({
+            type: "keyDown",
+            keyCode: '\u2191'
+          });
         });
         break;
       case 'downButton':
-      // Shift+tab
+      // Down
         navButtons[key].on('rise', () => {
-          robot.keyTap('tab');
+          window.webContents.sendInputEvent({
+            type: "keyDown",
+            keyCode: '\u2193'
+          });
         });
         break;
       case 'backButton':
-        // History back
+        // Left
         navButtons[key].on('rise', () => {
-          if (window.webContents.canGoBack()) {
-            window.webContents.goBack();
-          }
+          window.webContents.sendInputEvent({
+            type: "keyDown",
+            keyCode: '\u2190'
+          });
         });
         break;
       case 'selectButton':
-        // Enter
+        // Right
         navButtons[key].on('rise', () => {
-          robot.keyTap('enter');
+          window.webContents.sendInputEvent({
+            type: "keyDown",
+            keyCode: '\u2192'
+          });
         });
         break;
       default:

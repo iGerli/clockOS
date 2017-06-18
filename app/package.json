@@ -21,7 +21,6 @@
     "js"
   ],
   "dependencies": {
-    "robotjs": "~0.4.5",
     "electron": "^1.4.15",
     "electron-rebuild": "^1.5.7",
     "pi-pins": "~1.0.2"
