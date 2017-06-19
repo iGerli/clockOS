@@ -3,6 +3,7 @@ FROM resin/%%RESIN_MACHINE_NAME%%-node:6.10
 # Install other apt deps
 RUN apt-get update && apt-get install -y \
   apt-utils \
+  build-essential \
   clang \
   xserver-xorg-core \
   xserver-xorg-input-all \
@@ -53,6 +54,9 @@ ENV INITSYSTEM on
 
 # Change timezone
 RUN echo America/Costa_Rica | sudo tee /etc/timezone && sudo dpkg-reconfigure --frontend noninteractive tzdata
+
+# Get the app ui
+RUN git clone --branch prod https://github.com/iGerli/clockOS-ui.git data
 
 # Start app
 CMD ["bash", "/usr/src/app/start.sh"]
