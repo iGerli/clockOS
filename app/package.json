@@ -23,7 +23,8 @@
   "dependencies": {
     "electron": "^1.4.15",
     "electron-rebuild": "^1.5.7",
-    "pi-pins": "~1.0.2"
+    "pi-pins": "~1.0.2",
+    "nodegit": "^0.18.3"
   },
   "author": "Stefano Gerli",
   "bugs": {
