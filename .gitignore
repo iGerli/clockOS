@@ -107,6 +107,9 @@ Temporary Items
 # Linux trash folder which might appear on any partition or disk
 .Trash-*
 
+# Data is fetched from git
+app/data
+
 # Others
 logs/*
 !.gitkeep
