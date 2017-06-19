@@ -117,7 +117,7 @@ for (const key in navButtons) {
         navButtons[key].on('rise', () => {
           window.webContents.sendInputEvent({
             type: "keyDown",
-            keyCode: '\u2191'
+            keyCode: 'Up'
           });
         });
         break;
@@ -126,7 +126,7 @@ for (const key in navButtons) {
         navButtons[key].on('rise', () => {
           window.webContents.sendInputEvent({
             type: "keyDown",
-            keyCode: '\u2193'
+            keyCode: 'Down'
           });
         });
         break;
@@ -135,7 +135,7 @@ for (const key in navButtons) {
         navButtons[key].on('rise', () => {
           window.webContents.sendInputEvent({
             type: "keyDown",
-            keyCode: '\u2190'
+            keyCode: 'Left'
           });
         });
         break;
@@ -144,7 +144,7 @@ for (const key in navButtons) {
         navButtons[key].on('rise', () => {
           window.webContents.sendInputEvent({
             type: "keyDown",
-            keyCode: '\u2192'
+            keyCode: 'Right'
           });
         });
         break;
