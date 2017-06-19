@@ -58,5 +58,10 @@ RUN echo America/Costa_Rica | sudo tee /etc/timezone && sudo dpkg-reconfigure --
 # Get the app ui
 RUN git clone --branch prod https://github.com/iGerli/clockOS-ui.git data
 
+# Make the RTC work
+RUN   sed -i "s|exit 0|echo ds3231 0x68 > /sys/class/i2c-adapter/i2c-1/new_device|g" /etc/rc.local
+RUN   echo "sudo hwclock -s" >> /etc/rc.local
+RUN   echo "exit 0" >> /etc/rc.local
+
 # Start app
 CMD ["bash", "/usr/src/app/start.sh"]
