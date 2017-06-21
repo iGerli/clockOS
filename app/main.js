@@ -1,17 +1,18 @@
-/*var Git = require("nodegit");
-var pathToRepo = require("path").resolve("data");
-Git.Repository.open(pathToRepo).then(function (repo) {
-  return Git.Remote.load(repo, "origin");
-  }).then(function(remote) {
-    remote.connect(0);
-    return remote.download();
-  })
-  .done(function() {
-    console.log("Updated app");
-});*/
-
 const electron = require('electron');
 const path = require('path');
+
+const updater = require('./updater'); 
+
+updater.updateRepo(refreshBrowser, rescheduleUpdater);
+
+function rescheduleUpdater() {
+  setTimeout(updater.updateRepo, 300000, refreshBrowser, rescheduleUpdater);
+}
+
+function refreshBrowser() {
+    window.webContents.reload();
+    setTimeout(updater.updateRepo, 300000, refreshBrowser, rescheduleUpdater);
+}
 
 const { app, BrowserWindow } = electron;
 
